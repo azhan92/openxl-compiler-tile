@@ -27,7 +27,7 @@ resource "ibm_pi_image" "rhcos_image_import" {
 }
 
 data "ibm_pi_image" "rhcos" { 
-  pi_image_name        = ibm_pi_image.rhcos_image_import[0].pi_image_name
+  pi_image_name        = ibm_pi_image.rhcos_image_import.pi_image_name
   pi_cloud_instance_id = var.service_instance_id
 }
 
@@ -37,7 +37,7 @@ resource "ibm_pi_instance" "instance" {
   pi_processors        = var.processors
   pi_instance_name     = var.instance_name
   pi_proc_type         = var.processor_type
-  pi_image_id          = ibm_pi_image.rhcos_image_import[0].image_id
+  pi_image_id          = ibm_pi_image.rhcos_image_import.image_id
   pi_key_pair_name     = data.ibm_pi_key.key.id
   pi_sys_type          = var.sys_type
   pi_storage_type      = var.storage_type
