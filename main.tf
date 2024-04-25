@@ -24,6 +24,7 @@ resource "ibm_pi_image" "rhcos_image_import" {
   pi_image_bucket_region    = "us-south"
   pi_image_bucket_file_name = "open-xl-image.ova.gz"
   pi_image_storage_type     = "tier3"
+  pi_image_bucket_access    = "public"
 }
 
 data "ibm_pi_image" "rhcos" { 
