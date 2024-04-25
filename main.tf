@@ -26,8 +26,8 @@ resource "ibm_pi_image" "rhcos_image_import" {
 }
 
 data "ibm_pi_image" "rhcos" { 
-  pi_image_name        = ibm_pi_image.rhcos_image_import.pi_image_name
-  pi_cloud_instance_id = "5f50da70ea344509a9c85f513316fe83"
+  pi_image_name        = "openxltile-v17-01-01"
+  pi_cloud_instance_id = var.service_instance_id
 }
 
 resource "ibm_pi_instance" "instance" {
