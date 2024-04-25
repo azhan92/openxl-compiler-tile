@@ -18,7 +18,7 @@ data "ibm_pi_network" "power_network" {
 }
     
 resource "ibm_pi_image" "rhcos_image_import" {
-  pi_image_name             = "openxltile-v17-01-01"
+  pi_image_name             = var.rhcos_image_name
   pi_cloud_instance_id      = var.service_instance_id
   pi_image_bucket_name      = "open-xl-bucket"
   pi_image_bucket_region    = "us-south"
@@ -26,7 +26,7 @@ resource "ibm_pi_image" "rhcos_image_import" {
 }
 
 data "ibm_pi_image" "rhcos" { 
-  pi_image_name        = "openxltile-v17-01-01"
+  pi_image_name        = var.rhcos_image_name
   pi_cloud_instance_id = var.service_instance_id
 }
 
