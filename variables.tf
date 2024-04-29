@@ -52,3 +52,8 @@ variable "rhcos_image_name" {
   default     = "openxltile-v17-01-01" 
   description = "The name of an image"
 }
+
+variable "service_instance_id" {
+  type        = string
+  description = "The GUID of the service instance associated with an account"
+}
