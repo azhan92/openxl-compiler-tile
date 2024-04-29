@@ -43,7 +43,7 @@ data "ibm_pi_images" "cloud_instance_images" {
 resource "ibm_pi_image" "stock_image_copy" {
   count = length(local.private_image_id) == 0 ? 1 : 0
 
-  pi_image_name       = local.stock_image_name
+  pi_image_name       = var.rhcos_image_name
   pi_image_id         = local.catalog_image[0].image_id
   pi_cloud_instance_id = local.pid
 }
