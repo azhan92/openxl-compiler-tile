@@ -29,6 +29,13 @@ resource "ibm_pi_image" "rhcos_image_import" {
   pi_image_bucket_access    = "public"
 }
 
+data "ibm_pi_image" "rhcos" {
+  depends_on = [ibm_pi_image.rhcos_image_import]
+ 
+  pi_image_name          = ibm_pi_image.rhcos_image_import.pi_image_name
+  pi_cloud_instance_id   = var.service_instance_id
+}
+
 data "ibm_pi_images" "cloud_instance_images" {
   pi_cloud_instance_id = local.pid
 }
@@ -39,7 +46,7 @@ resource "ibm_pi_instance" "instance" {
   pi_processors        = var.processors
   pi_instance_name     = var.instance_name
   pi_proc_type         = var.processor_type
-  pi_image_id          = local.private_image_id
+  pi_image_id          = ibm_pi_image.rhcos_image_import.pi_image_id
   pi_key_pair_name     = data.ibm_pi_key.key.id
   pi_sys_type          = var.sys_type
   pi_storage_type      = var.storage_type
