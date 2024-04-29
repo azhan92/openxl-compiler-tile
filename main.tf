@@ -62,3 +62,4 @@ resource "ibm_pi_instance" "instance" {
   pi_network {
     network_id = data.ibm_pi_network.power_network.id
   }
+}
