@@ -52,7 +52,7 @@ variable "service_instance_id" {
   description = "The GUID of the service instance associated with an account"
 }
 
-variable "cloud_instance_id" {
+variable "service_instance_id_2" {
   type        = string
 }
 
