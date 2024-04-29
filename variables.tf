@@ -52,10 +52,6 @@ variable "service_instance_id" {
   description = "The GUID of the service instance associated with an account"
 }
 
-variable "service_instance_id_2" {
-  type        = string
-}
-
 variable "rhcos_image_name" {
   type        = string
   default     = "openxltile-v17-01-01" 
