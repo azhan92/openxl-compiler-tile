@@ -31,7 +31,7 @@ data "ibm_pi_image" "rhcos" {
   depends_on = [ibm_pi_image.rhcos_image_import]
  
   pi_image_name          = ibm_pi_image.rhcos_image_import.pi_image_name
-  pi_cloud_instance_id   = local.pid
+  pi_cloud_instance_id   = ibm_pi_image.rhcos_image_import.pi_cloud_instance_id
 }
 
 resource "ibm_pi_instance" "instance" {
