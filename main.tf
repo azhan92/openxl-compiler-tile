@@ -29,7 +29,7 @@ resource "ibm_pi_image" "rhcos_image_import" {
 
 data "ibm_pi_image" "rhcos" { 
   pi_image_name        = ibm_pi_image.rhcos_image_import.pi_image_name
-  pi_cloud_instance_id = var.service_instance_id
+  pi_cloud_instance_id = var.service_instance_id_2
 }
 
 resource "ibm_pi_instance" "instance" {
