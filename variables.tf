@@ -40,20 +40,13 @@ variable "network_name" {
   type        = string
   description = "The network ID or name to assign to the instance, as defined for the selected Power Systems Virtual Server CRN"
 }
-
 variable "placement_group" {
   type        = string
   default     = "None"
   description = "The server placement group name where the instance will be placed, as defined for the selected Power Systems Virtual Server CRN"
 }
-
 variable "rhcos_image_name" {
   type        = string
   default     = "openxltile-v17-01-01" 
   description = "The name of an image"
-}
-
-variable "service_instance_id" {
-  type        = string
-  description = "The GUID of the service instance associated with an account"
 }
