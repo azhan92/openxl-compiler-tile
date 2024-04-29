@@ -34,10 +34,6 @@ data "ibm_pi_image" "rhcos" {
   pi_cloud_instance_id   = var.service_instance_id
 }
 
-data "ibm_pi_images" "cloud_instance_images" {
-  pi_cloud_instance_id = local.pid
-}
-
 resource "ibm_pi_instance" "instance" {
   pi_cloud_instance_id = local.pid
   pi_memory            = var.memory
