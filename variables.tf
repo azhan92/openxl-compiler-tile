@@ -47,11 +47,6 @@ variable "placement_group" {
   description = "The server placement group name where the instance will be placed, as defined for the selected Power Systems Virtual Server CRN"
 }
 
-variable "service_instance_id" {
-  type        = string
-  description = "The GUID of the service instance associated with an account"
-}
-
 variable "rhcos_image_name" {
   type        = string
   default     = "openxltile-v17-01-01" 
